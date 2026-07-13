@@ -4,3 +4,5 @@ __pycache__/
 insight_engine.db
 insight_engine.db-journal
 .pytest_cache/
+docs/app_store_brief.md
+data/app_store_reviews.csv

@@ -32,6 +32,28 @@ Runs fully offline out of the box. Two optional upgrades:
 | `ANTHROPIC_API_KEY` set | Theme labels + brief written by Claude (else: keyword labels + template brief) |
 | `pip install sentence-transformers` | MiniLM embeddings (else: TF-IDF + SVD) |
 
+## Real data (optional)
+
+The quickstart above seeds the dashboard with synthetic feedback. To run the
+same pipeline against real customer reviews instead:
+
+```bash
+python scripts/fetch_app_store_reviews.py --app-id 324684580   # any App Store app id
+```
+
+Pulls recent reviews straight from Apple's public App Store RSS feed — no API
+key, no auth, no scraping ToS issues (Google Play has no equivalent public
+endpoint, so it isn't supported here). It replaces the current database
+contents and reruns ingest → cluster → score → brief on the real data, so
+synthetic and real records never end up clustered together.
+
+Find an app's numeric id from its App Store URL, e.g.
+`apps.apple.com/us/app/whatsapp-messenger/id310633997` → `310633997`. Not
+every app paginates past ~50 reviews; pass `--pages 8` and try a different
+app id if too few themes form. Real reviews are unfiltered user-generated
+text, so expect noisier clusters and occasional inappropriate language
+compared to the curated sample dataset.
+
 ## Architecture
 
 ```
