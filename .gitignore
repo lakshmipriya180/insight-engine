@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+insight_engine.db
+insight_engine.db-journal
+.pytest_cache/
