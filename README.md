@@ -4,6 +4,8 @@
 
 **🔗 Live demo:** [insight-engine-jnztcclcmrpw8rrdm2ffpn.streamlit.app](https://insight-engine-jnztcclcmrpw8rrdm2ffpn.streamlit.app/) — self-seeds with synthetic feedback on first load, no setup needed. (Free-tier hosting: may take ~30s to wake up if it's been idle.)
 
+![Dashboard screenshot](docs/images/dashboard.png)
+
 insight-engine ingests unstructured customer feedback (app reviews, NPS surveys, support tickets), automatically clusters it into themes, scores sentiment and urgency, and generates an executive-ready Voice-of-Customer brief — with every quote cited back to its source record.
 
 ## Why I built this
